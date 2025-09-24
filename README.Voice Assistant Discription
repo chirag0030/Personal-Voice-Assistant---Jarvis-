@@ -1,4 +1,4 @@
-# project:- Personal Voice Assistant :- Jarvis 
+## 1)  project:- Personal Voice Assistant :- Jarvis 
 
 A Python-based personal voice assistant that can listen to voice commands and perform various tasks. 
 The assistant uses speech recognition and text-to-speech to interact with the user in real time.
@@ -19,8 +19,7 @@ The assistant uses speech recognition and text-to-speech to interact with the us
 •Build a GUI for better interaction
 
 
-
-# Project:- AI Based Auto Responder (WhatsApp Bot)
+## 2) Project:- AI Based Auto Responder (WhatsApp Bot)
 
 🔹 Overview
 This project is an AI-powered auto responder for WhatsApp built using Python. 
@@ -46,3 +45,67 @@ Selenium (for WhatsApp Web automation)
 •Support for multimedia (images, voice notes).
 •Dashboard for monitoring conversations.
 •Multi-user support for businesses.
+
+
+## 3) Project:- 
+📊 Super Store Sales Dashboard – Key Insights
+
+🔹 Project Description
+This project is a Power BI Dashboard built for analyzing Super Store sales performance. 
+The dashboard provides interactive insights into sales, profit, customer behavior, and product performance across multiple categories and regions.
+
+🔹 Tools Used
+Power BI – For building interactive visualizations
+Excel/CSV Dataset – Data source for sales transactions
+
+🔹 Key Features
+• Overall KPIs – Total Sales, Profit, Revenue, Quantity Sold, and Customers
+• Sales by Payment Mode – Distribution across Cards, Online, and COD
+• Sales by Segment – Analysis for Consumer, Corporate, and Home Office segments
+• Monthly Trends (YoY) – Comparison of Sales & Profit across 2019 and 2020
+• Category & Sub-Category Insights – Top-performing product categories (Office Supplies, Technology, Furniture) and sub-categories (Phones, Chairs, Binders)
+• Regional Analysis – Filter data by Central, East, South, and West regions
+
+🔹 Business Insights
+• COD accounts for the highest share of transactions.
+• Consumer segment contributes nearly half of the total sales.
+• Phones and Office Supplies are the top revenue generators.
+• Sales and profits significantly increased in the last quarter of 2020 compared to 2019.
+
+• Overall KPIs (Key Performance Indicators):
+Total Sales: $1.57M
+Total Profit: $175.26K
+Quantity Sold: 22K units
+Total Revenue: $7.18M
+Total Customers: 5901
+
+• Sales by Payment Mode:
+Cards: 21.99%
+Online: 35.38%
+Cash on Delivery (COD): 42.62%
+
+• Sales by Segment:
+Home Office: 19%
+Consumer: 48%
+Corporate: 33%
+
+• Monthly Sales by Year (YoY):
+Trend comparison between 2019 & 2020.
+Sales in 2020 show higher growth compared to 2019, especially in later months.
+
+• Monthly Profit by Year (YoY):
+Profits fluctuate across months.
+Noticeable increase in profitability in the last quarter of 2020 compared to 2019.
+
+• Sales by Category:
+Office Supplies: $0.64M
+Technology: $0.47M
+Furniture: $0.45M
+
+• Sales by Sub-Category:
+Phones: $0.20M
+Chairs: $0.18M
+Binders: $0.17M
+
+• Regional Filters Available:
+Dashboard can be filtered by Central, East, South, and West regions.
