@@ -1,0 +1,158 @@
+## 1) Top 5 most expensive cars
+'''SELECT name, selling_price
+FROM cars
+ORDER BY selling_price DESC
+LIMIT 5;
+
+## 2) Average price of cars grouped by fuel type
+'''SELECT fuel, AVG(selling_price) AS avg_price
+FROM cars
+GROUP BY fuel;'''
+
+## 3) Cars priced higher than the average selling price
+'''SELECT name, selling_price
+FROM cars
+WHERE selling_price > (
+SELECT AVG(selling_price)
+FROM cars);'''
+
+## 4) Find oldest and newest car per fuel type (using window functions)
+'''SELECT fuel, name, year
+FROM (
+    SELECT fuel, name, year,
+           ROW_NUMBER() OVER (PARTITION BY fuel ORDER BY year ASC) AS oldest,
+           ROW_NUMBER() OVER (PARTITION BY fuel ORDER BY year DESC) AS newest
+    FROM cars
+) t
+WHERE oldest = 1 OR newest = 1;'''
+
+## 5) Rank cars by price within each fuel type
+'''SELECT name, fuel, selling_price,
+       RANK() OVER (PARTITION BY fuel ORDER BY selling_price DESC) AS price_rank
+FROM cars;'''
+
+## 6) Top 3 cheapest cars by transmission type
+'''SELECT name, transmission, selling_price
+FROM (
+    SELECT name, transmission, selling_price,
+           ROW_NUMBER() OVER (PARTITION BY transmission ORDER BY selling_price ASC) AS rn
+    FROM cars
+) t
+WHERE rn <= 3;'''
+
+## 7) Count of cars by owner type
+'''
+SELECT owner, COUNT(*) AS car_count
+FROM cars
+GROUP BY owner;'''
+
+## 8) Year with maximum average selling price
+'''SELECT year
+FROM (
+    SELECT year, AVG(selling_price) AS avg_price
+    FROM cars
+    GROUP BY year
+    ORDER BY avg_price DESC
+    LIMIT 1
+) t;'''
+
+## 9) Cars driven above average km
+'''SELECT name, km_driven
+FROM cars
+WHERE km_driven > (SELECT AVG(km_driven) FROM cars);
+'''
+
+## 10) Find most common car brand
+'''SELECT SPLIT_PART(name, ' ', 1) AS brand, COUNT(*) AS cnt
+FROM cars
+GROUP BY brand
+ORDER BY cnt DESC
+LIMIT 1;'''
+
+## 11) Find duplicate cars (same name, year, and fuel)
+'''SELECT name, year, fuel, COUNT(*) AS cnt
+FROM cars
+GROUP BY name, year, fuel
+HAVING COUNT(*) > 1;'''
+
+## 12) Percentage share of each fuel type
+''' SELECT fuel,
+       COUNT(*) * 100.0 / (SELECT COUNT(*) FROM cars) AS percentage_share
+FROM cars
+GROUP BY fuel;'''
+
+## 13) Moving average of car prices by year
+''' SELECT year, AVG(selling_price) OVER (ORDER BY year ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS moving_avg_price
+FROM cars;'''
+
+## 14) Cars more expensive than all cars of 2007
+''' SELECT name, selling_price
+FROM cars
+WHERE selling_price > ALL (SELECT selling_price FROM cars WHERE year = 2007); '''
+
+## 15) Cars that are first owners and automatic
+''' SELECT name, selling_price
+FROM cars
+WHERE owner = 'First Owner' AND transmission = 'Automatic'; '''
+
+## 16) Get second most expensive car per fuel type
+''' SELECT fuel, name, selling_price
+FROM (
+    SELECT fuel, name, selling_price,
+           DENSE_RANK() OVER (PARTITION BY fuel ORDER BY selling_price DESC) AS rnk
+    FROM cars
+) t
+WHERE rnk = 2;'''
+
+## 17) Find cars priced in top 10%
+''' SELECT name, selling_price
+FROM (
+    SELECT name, selling_price,
+           NTILE(10) OVER (ORDER BY selling_price DESC) AS decile
+    FROM cars
+) t
+WHERE decile = 1; '''
+
+## 18) Find cars with above-average price per fuel type
+''' SELECT name, fuel, selling_price
+FROM cars c
+WHERE selling_price > (
+    SELECT AVG(selling_price) FROM cars WHERE fuel = c.fuel
+); '''
+
+## 19) Find cars with highest km_driven in each transmission type
+''' SELECT transmission, name, km_driven
+FROM (
+    SELECT transmission, name, km_driven,
+           ROW_NUMBER() OVER (PARTITION BY transmission ORDER BY km_driven DESC) AS rn
+    FROM cars
+) t
+WHERE rn = 1;'''
+
+## 20) Cumulative average selling price by year
+''' SELECT year, 
+       AVG(selling_price) OVER (ORDER BY year ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_avg
+FROM cars; '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
