@@ -1,4 +1,5 @@
-Personal Voice Assistant :- Jarvis 🎙️
+# project:- Personal Voice Assistant :- Jarvis 🎙️
+
 A Python-based personal voice assistant that can listen to voice commands and perform various tasks. 
 The assistant uses speech recognition and text-to-speech to interact with the user in real time.
 
@@ -16,3 +17,32 @@ The assistant uses speech recognition and text-to-speech to interact with the us
 •Add support for more advanced commands
 •Integrate with APIs (weather, news, etc.)
 •Build a GUI for better interaction
+
+
+
+# Project:- AI Based Auto Responder (WhatsApp Bot)
+
+🔹 Overview
+This project is an AI-powered auto responder for WhatsApp built using Python. 
+It is designed to automatically reply to incoming WhatsApp messages in real time with intelligent and context-aware responses. 
+The bot reduces manual effort by handling repetitive queries, improving response time, and ensuring seamless communication
+
+
+🔹 Features
+✅ Automated Replies – Responds instantly to incoming last messages.
+✅ AI-Powered – Generates smart, human-like responses using chatgpt .
+✅ Custom Rules – Allows predefined rules for specific keywords or phrases.
+✅ Real-Time Interaction – Works seamlessly with WhatsApp Web.
+✅ Scalable – Can be extended for business use (customer support, FAQs, etc.).
+
+•Tech Stack
+Programming Language: Python 🐍
+Libraries/Frameworks:
+Selenium (for WhatsApp Web automation)
+
+🔹 Future Enhancements
+
+•Integration with advanced AI models (e.g., GPT-based).
+•Support for multimedia (images, voice notes).
+•Dashboard for monitoring conversations.
+•Multi-user support for businesses.
